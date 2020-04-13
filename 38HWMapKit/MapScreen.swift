@@ -230,7 +230,6 @@ class MapScreen: UIViewController {
     @objc private func actionInfoStudent(sender: UIButton) {
         
         if geocoder.isGeocoding {
-            print("geocoder.isGeocoding = true!!!")
             geocoder.cancelGeocode()
         }
         
@@ -343,7 +342,6 @@ class MapScreen: UIViewController {
     
     // Change overlays by state
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
-        print("view = \(view.description), newState = \(newState.rawValue), oldState \(oldState.rawValue)")
         
         if view is PlaceMeet && newState == .starting {
     
@@ -563,7 +561,6 @@ class MapScreen: UIViewController {
                 let actionAlert = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
                 alert.addAction(actionAlert)
                 self.present(alert, animated: true, completion: nil)
-                print("Error: \(error.debugDescription)")
                  
                  return
              }
